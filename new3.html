@@ -1,160 +1,1093 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dilshan Portfolio</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Hero Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#typed-text', {
+        strings: ['Full Stack Developer', 'UI/UX Designer', 'Freelancer'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
+</script>
 <style>
+/* --- Variables & Global Setup --- */
 :root {
---bg-dark:#0a0a0a;
---mint:#1fd691;
+    --bg-cream: #fdfbf7;        /* Main background */
+    --accent-black: #a23513;    /* Main accent (replacing green) */
+    --accent-hover: #1a1a1a;
+    --text-main: #1a1a1a;
+    --text-muted: #1a1a1a;
+    
+    /* Glassmorphism Properties */
+    --card-glass: rgba(255, 255, 255, 0.4);
+    --border-glass: rgba(194, 13, 13, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
-body{
-background:var(--bg-dark);
-color:white;
-font-family:'Inter',sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
-.section{padding:80px 0;}
-
-.section-title{text-align:center;margin-bottom:50px;}
-
-.text-mint{color:var(--mint);}
-
-/* SIDEBAR */
-.social-sidebar{
-position:fixed;
-top:50%;
-left:20px;
-transform:translateY(-50%);
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:999;
+body {
+    background-color: var(--bg-cream);
+    /* Subtle texture gradient */
+    background-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.01) 0%, transparent 80%);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    margin: 0;
 }
 
-.social-sidebar a{
-width:45px;height:45px;
-display:flex;align-items:center;justify-content:center;
-background:#0d1117;
-border-radius:50%;
-color:white;
-transition:.3s;
+/* --- Color & Text Helpers --- */
+.text-mint {
+    color: var(--accent-black) !important;
+    font-weight: 700;
 }
 
-.social-sidebar a:hover{
-background:var(--mint);
-color:black;
+.letter-spacing {
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-.card{
-background:#0d1117;
-border:1px solid rgba(255,255,255,0.05);
-color:white;
+/* --- Navbar Styling --- */
+/* --- Navbar Link Styling --- */
+.nav-link {
+    color: #a23513 !important;      /* Your Brown Accent Color */
+    font-size: 0.80rem;             /* Slightly smaller for that premium look */
+    font-weight: 700;               /* Bold like the photo */
+    text-transform: uppercase;      /* All caps */
+    letter-spacing: 3px;            /* The key to matching the photo style */
+    padding: 0 15px !important;
+    transition: all 0.3s ease;
 }
 
+.nav-link:hover {
+    color: #0a0a0a !important;      /* Turns black on hover */
+    transform: translateY(-1px);    /* Subtle lift effect */
+}
+.nav-link.active {
+    color: #0a0a0a !important;
+    font-weight: 800;
+}
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+h1.display-1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+}
+
+.role-text {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+}
+
+/* --- Button Styles (Solid Black & Glass) --- */
+.btn-mint, .btn-mint-lg, .btn-mint-sm {
+    background-color: var(--accent-black);
+    border: none;
+    color: #ffffff !important;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-mint:hover, .btn-mint-lg:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn-outline-light, .btn-outline-dark-sm, .btn-outline-dark-lg {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: var(--card-glass);
+    color: var(--text-main);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover, .btn-outline-dark-sm:hover {
+    background-color: #fff;
+    border-color: var(--accent-black);
+    color: var(--accent-black);
+}
+
+/* --- Section Title Styling --- */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline {
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-black);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* --- Universal Card Styling (Glassmorphism) --- */
+.about-card, .service-card, .education-card, .project-card, .certificate-card, .contact-card, .skill-card, .info-card {
+    background: var(--card-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-card:hover, .service-card:hover, .project-card:hover, .certificate-card:hover {
+    border-color: var(--accent-black);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Skills Slider --- */
+.skills-slider {
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+}
+
+.skills-track {
+    display: flex;
+    width: calc(205px * 20);
+}
+
+.track-left { animation: scroll-left 30s linear infinite; }
+.track-right { animation: scroll-right 30s linear infinite; }
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-205px * 10)); }
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(calc(-205px * 10)); }
+    100% { transform: translateX(0); }
+}
+
+.skill-card {
+    width: 180px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--accent-black);
+    margin-bottom: 12px;
+}
+
+/* Gradient Masks for Slider Edges */
+.skills-slider::before, .skills-slider::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+}
+.skills-slider::before { left: 0; background: linear-gradient(to right, var(--bg-cream), transparent); }
+.skills-slider::after { right: 0; background: linear-gradient(to left, var(--bg-cream), transparent); }
+
+/* --- Icons & Specific Accents --- */
+.service-icon i, .edu-icon i, .cert-icon i, .info-icon i {
+    font-size: 1.8rem;
+    color: var(--accent-black);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* --- Badges --- */
+.lang-badge, .badge-tech {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--accent-black);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* --- Forms & Inputs --- */
+.custom-input {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-main);
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.custom-input:focus {
+    background-color: #f6f3f3;
+    border-color: var(--accent-black);
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* --- Sidebar Socials --- */
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.social-sidebar a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 50%;
+    color: var(--accent-black);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.social-sidebar a:hover {
+    background: var(--accent-black);
+    color: #a23513;
+    transform: scale(1.1);
+}
+/* --- Sidebar Socials --- */
+.social-sidebar a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;           /* Default: Black background */
+    border-radius: 50%;
+    color: #a23513;                /* White icon color for contrast */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- Hover & Touch State --- */
+.social-sidebar a:hover, 
+.social-sidebar a:active {
+    background: #170f0c;           /* Coffee / Brown color on hover */
+    color: #ffffff;                /* Keep icon white */
+    transform: scale(1.1) translateX(5px); /* Moves slightly right when touched */
+    box-shadow: 0 6px 15px rgba(162, 53, 19, 0.3);
+}
+/* --- Typed.js Cursor --- */
+.typed-cursor {
+    color: var(--accent-black);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+    .about-text { font-size: 1rem; }
+    .hero-section { min-height: 70vh; }
+    .social-sidebar { display: none; } /* Hide sidebar on mobile for better UX */
+}.hero-name {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    font-family: "Playfair Display", serif;
+    color: #111;
+    line-height: 1;
+}
+
+.text-orange {
+    color: #a23513;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+/* optional background like clean portfolio look */
+.hero-section {
+    min-height: 100vh;
+    background: hsl(0, 0%, 100%);
+}
+
+/* --- New Highlight Color Class --- */
+.text-accent {
+    color: #a23513 !important;
+}
+
+/* --- Ensure Section Titles are White by Default --- */
+.text-brown {
+    color: #a23513 !important;
+}
+
+/* --- Black Accent --- */
+.text-black-heading {
+    color: #0a0a0a !important; /* Deep black */
+}
+
+/* Target titles inside the education and service cards */
+.education-card h3, 
+.service-card h3, 
+.project-card h3, 
+.certificate-card h3 {
+    color: #a23513 !important;
+    font-weight: 700;
+}
+
+/* Target the description text and labels like 'Languages Known' */
+.education-card p, 
+.service-card p, 
+.info-card h4,
+.certificate-text {
+    color: #1a1a1a !important; /* Keep descriptions dark for readability */
+}
+
+/* Specific class for any standalone certificate text */
+.text-brown-custom {
+    color: #a23513 !important;
+}
+
+
+.section-title {
+    /* Font Styles to match the photo */
+    font-weight: 700;               /* Bold like the photo */
+    text-transform: uppercase;      /* All caps */
+    letter-spacing: 4px;            /* Increased spacing for that premium look */
+    
+    /* Keeping your existing layout */
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-bottom: 0;
+    border-bottom: none !important;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This pushes the buttons to the bottom */
+    height: 100%; /* Ensures all cards are the same height */
+}
+
+/* Optional: Wrap your buttons in a div to ensure they stay together */
+.button-container {
+    margin-top: auto; /* Pushes the button group to the bottom */
+    padding-top: 20px;
+}
+
+
+/* Base Style for Language Badges */
+.lang-badge {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #1a1a1a; /* Dark text for readability */
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover & Touch Style */
+.lang-badge:hover, 
+.lang-badge:active {
+    background-color: #0a0a0a !important; /* Turns Black */
+    color: #ffffff !important;           /* Text turns White */
+    border-color: #0a0a0a;
+    transform: translateY(-2px);         /* Slight lift effect */
+}
+
+
+/* Base Style for your Live Demo Buttons */
+.btn-mint-sm {
+    background-color: #a23513 !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover (Desktop) and Active (Mobile Touch) */
+.btn-mint-sm:hover, 
+.btn-mint-sm:active {
+    background-color: #0a0a0a !important; /* Changes to Black */
+    color: #ffffff !important;            /* Keeps text White */
+    transform: translateY(-2px);          /* Subtle lift effect */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Ensure the GitHub button also looks sharp */
+.btn-outline-dark-sm:hover {
+    background-color: #0a0a0a !important;
+    color: #ffffff !important;
+    border-color: #0a0a0a;
+}
 </style>
 </head>
-
 <body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-4">
+    <div class="container">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Service</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <!-- SIDEBAR -->
 <div class="social-sidebar">
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-<a href="#"><i class="fab fa-github"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-whatsapp"></i></a>
-<a href="#"><i class="fas fa-envelope"></i></a>
-<a href="#"><i class="fas fa-code"></i></a>
+<a href="https://www.linkedin.com/in/dilshan-vp/" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+</a>
+<a href="https://github.com/dilshanvp2003-design" target="_blank">
+    <i class="fab fa-github"></i>
+<a href="https://www.instagram.com/dilshan_vp" target="_blank">
+    <i class="fab fa-instagram"></i>
+</a>
+<a href="https://wa.me/919567695996" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+
+
+<a href="mailto:dilshanvp2003@gmail.com" title="Send me an email">
+    <i class="fas fa-envelope"></i>
+</a>
+</a>
+
+
+<a href="https://leetcode.com/u/dilshan_vp/" target="_blank">
+    <i class="fas fa-code"></i>
+</a>
 </div>
 
-<!-- HERO -->
-<section class="section text-center">
-<div class="container">
-<h1>Hello I'm <span class="text-mint">Dilshan VP</span></h1>
-<h4><span id="typed-text"></span></h4>
-</div>
+
+<section class="hero-section d-flex align-items-center text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+
+                <!-- Small intro text -->
+                <h6 class="text-uppercase letter-spacing mb-3 text-orange">
+                    Hey, I'm
+                </h6>
+
+                <!-- Big name -->
+                <h1 class="hero-name mb-4">
+                    Dilshan Vp
+                </h1>
+
+                <p class="role-text text-secondary mb-5">UI/UX Designer</p>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <a href="#projects" class="btn btn-mint px-4 py-3">View My Projects</a>
+
+                    <a href="images/WhatsApp Image 2026-04-27 at 8.11.40 PM.jpeg"
+                       target="_blank"
+                       class="btn btn-outline-light px-4 py-3">
+                        Download Resume
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about-section"></section>
+    <section class="about-section py-5">
+        
+    <div class="container">
+        <div class="mb-5">
+
+
+<h2 class="section-title"><span class="text-brown">About</span> <span class="text-black-heading">Me</span></h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="about-card p-4 p-md-5">
+            <p class="about-text text-secondary mb-4">
+                I'm a passionate <strong style=color:#a23513>Full Stack Developer</strong> with a strong foundation in building modern, scalable web applications. I specialize in crafting clean, efficient code and delivering seamless user experiences from frontend to backend.
+            </p>
+            <p class="about-text text-secondary mb-0">
+                With expertise in Python, Django, React, Flutter and modern web technologies, I enjoy solving complex problems and turning ideas into reality. I'm dedicated to continuous learning and staying at the forefront of technology trends.
+            </p>
+        </div>
+    </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section">
-<div class="container">
-<div class="section-title"><h2>About Me</h2></div>
-<div class="card p-4 text-center">Full Stack Developer</div>
+
+<section class="skills-section py-5">
+    <section id="skills" class="skills-section"></section>
+    <div class="container">
+       <div class="mb-5">
+<div class="mb-5">
+    <h2 class="section-title">
+        <span class="text-brown">My</span> 
+        <span class="text-black-heading">Skills</span>
+    </h2>
+    <div class="title-underline"></div>
 </div>
+</div>
+
+        <div class="skills-slider mb-4">
+            <div class="skills-track track-left">
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="skill-card"><i class="fas fa-code"></i><span>Django</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>MySQL</span></div>
+                <div class="skill-card"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Flutter</span></div>
+                <div class="skill-card"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+                <div class="skill-card"><i class="fas fa-code-branch"></i><span>jQuery</span></div>
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="skill-card"><i class="fas fa-code"></i><span>Django</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>MySQL</span></div>
+                <div class="skill-card"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Flutter</span></div>
+                <div class="skill-card"><i class="fas fa-leaf"></i><span>Excel</span></div>
+                <div class="skill-card"><i class="fas fa-code-branch"></i><span>Power BI</span></div>
+            </div>
+        </div>
+
+        <div class="skills-slider">
+            <div class="skills-track track-right">
+                <div class="skill-card"><i class="fas fa-chart-bar"></i><span>PowerBI</span></div>
+                <div class="skill-card"><i class="fas fa-file-excel"></i><span>Excel</span></div>
+                <div class="skill-card"><i class="fas fa-window-maximize"></i><span>Tkinter</span></div>
+                <div class="skill-card"><i class="fas fa-square-root-alt"></i><span>NumPy</span></div>
+              <div class="skill-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="skill-card"><i class="fas fa-code"></i><span>Django</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>MySQL</span></div>
+                <div class="skill-card"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Flutter</span></div>
+                <div class="skill-card"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+                <div class="skill-card"><i class="fas fa-code-branch"></i><span>jQuery</span></div>
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="skill-card"><i class="fas fa-code"></i><span>Django</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>MySQL</span></div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- SKILLS -->
-<section class="section">
-<div class="container">
-<div class="section-title"><h2>Skills</h2></div>
-<div class="row g-4 text-center">
-<div class="col-md-3"><div class="card p-3">HTML</div></div>
-<div class="col-md-3"><div class="card p-3">CSS</div></div>
-<div class="col-md-3"><div class="card p-3">Python</div></div>
-<div class="col-md-3"><div class="card p-3">Django</div></div>
+
+<section class="education-section py-5">
+    <div class="container">
+<div class="mb-5">
+    <h2 class="section-title">
+        <span class="text-brown">Educ</span><span class="text-black-heading">ation</span>
+    </h2>
+    <div class="title-underline"></div>
 </div>
+
+        <div class="d-flex flex-column gap-4">
+            <div class="education-card p-4">
+                <div class="d-flex align-items-start gap-3">
+                    <div class="edu-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        
+                        <h5 class="fw-bold mb-2" style="color: #040404;">Diploma in Software Engineering</h5>
+                        <p class="text-secondary mb-0">Specialized in modern software development practices and engineering principles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-card p-4">
+                <div class="d-flex align-items-start gap-3">
+                    <div class="edu-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                      
+                        <h5 class="fw-bold mb-2" style="color: #040404;">Bachelor's Degree in BA English</h5>
+                        
+                        <p class="text-secondary mb-0">Calicut University — Strong foundation in communication and analytical thinking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-card p-4">
+                <div class="d-flex align-items-start gap-3">
+                    <div class="edu-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div>
+                       <h5 class="fw-bold mb-3" style="color: #040404;">Languages Known</h5>
+                      <div class="d-flex flex-wrap gap-2">
+    <span class="lang-badge">English</span>
+    <span class="lang-badge">Hindi</span>
+    <span class="lang-badge">Malayalam</span>
 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
-<div class="container">
-<div class="section-title"><h2>Services</h2></div>
-<div class="row g-4">
-<div class="col-md-6"><div class="card p-3">Full Stack Development</div></div>
-<div class="col-md-6"><div class="card p-3">Backend Development</div></div>
+
+
+
+<section class="services-section py-5">
+    <section id="services" class="services-section"></section>
+    <div class="container">
+       <div class="mb-5">
+    <h2 class="section-title">
+        <span class="text-brown">My</span> 
+        <span class="text-black-heading">Services</span>
+    </h2>
+    <div class="title-underline"></div>
 </div>
-</div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                   <h4 class="fw-bold mb-3" style="color: #040404;">
+    Full Stack Web Application
+</h4>
+                    <p class="text-secondary">Django, React, Responsive Layouts, PostgreSQL/MySQL — end-to-end solutions built for scale.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    
+
+                   <h4 class="fw-bold mb-3" style="color: #040404;">
+    Backend & API Devolepment
+</h4>
+
+                    <p class="text-secondary">Python & Django, Data Validation & Security, Third-party Integrations with robust architecture.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+
+                                       <h4 class="fw-bold mb-3" style="color: #040404;">
+Frontend & UI Implementation
+</h4>
+
+                    <p class="text-secondary">Responsive Design, Component-based UI, Performance-focused Markup for delightful experiences.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                  
+
+                                                           <h4 class="fw-bold mb-3" style="color: #040404;">
+Support & Iteration
+</h4>
+                    <p class="text-secondary">Code Reviews & Refactoring, Feature Enhancements, Documentation to keep your project healthy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- EDUCATION -->
-<section class="section">
-<div class="container">
-<div class="section-title"><h2>Education</h2></div>
-<div class="card p-3 text-center">Diploma in Software Engineering</div>
+
+
+
+<section id="projects" class="projects-section py-5">
+    <section id="projects" class="projects-section"></section>
+    <div class="container">
+   <div class="mb-5">
+    <h2 class="section-title">
+        <span class="text-brown">My</span> 
+        <span class="text-black-heading">Projects</span>
+    </h2>
+    <div class="title-underline"></div>
 </div>
+        <div class="row g-4">
+
+        
+      <!-- Project 1 -->
+<div class="col-md-6">
+    <div class="project-card p-4 h-100">
+
+        <!-- Project Image -->
+        <img src="images\sinet.jpeg" class="img-fluid rounded mb-3" alt="Sinet Project">
+
+                                                           <h4 class="fw-bold mb-3" style="color: #040404;">
+Sinet education
+</h4>
+
+
+        <p class="text-secondary mb-4">
+            A responsive education website built using HTML, CSS, and JavaScript for SINET Institute,
+            an ISO-certified training organization. The platform showcases placement-oriented courses such as SAP,
+            Python Full Stack, Networking, and Diploma programs with structured sections for courses, certifications,
+            and career guidance. Designed with a clean UI, smooth navigation, and mobile-friendly layout,
+            the site highlights key features like job placements, student testimonials, and course brochures,
+            ensuring an engaging and informative user experience across all devices.
+        </p>
+
+        <div class="d-flex gap-3">
+            <a href="https://dilshanvp2003-design.github.io/sinet-project/" target="_blank" class="btn btn-mint-sm">
+                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+            </a>
+            <a href="#" class="btn btn-outline-dark-sm">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+            <!-- Project 2 -->
+            <div class="col-md-6">
+    <div class="project-card p-4 h-100">
+
+        <!-- Project Image -->
+        <img src="images\decofur.jpeg" class="img-fluid rounded mb-3" alt="Decofur Project">
+
+       
+                                                                   <h4 class="fw-bold mb-3" style="color: #040404;">
+Decofur
+</h4>
+
+        <p class="text-secondary mb-4">
+            A modern e-commerce furniture website built using HTML, CSS, and JavaScript,
+            designed to showcase stylish home décor and furniture collections.
+            The platform features category-based browsing, product listings, 
+            promotional banners, and seasonal offers with a clean and responsive layout.
+            With smooth navigation, visually appealing sections, and user-friendly design,
+            the site delivers an engaging shopping experience across devices.
+        </p>
+
+        <div class="d-flex gap-3">
+            <a href="https://dilshanvp2003-design.github.io/decofur-/" target="_blank" class="btn btn-mint-sm">
+                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+            </a>
+            <a href="#" class="btn btn-outline-dark-sm">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Project 3 -->
+<div class="col-md-6">
+    <div class="project-card p-4 h-100">
+
+        <!-- Project Image -->
+        <img src="images\sap.jpeg" class="img-fluid rounded mb-3" alt="SAP Website">
+
+                                                                   <h4 class="fw-bold mb-3" style="color: #040404;">
+SAP
+</h4>
+
+        <p class="text-secondary mb-4">
+            A responsive corporate-style website built using HTML, CSS, and JavaScript, inspired by SAP’s enterprise platform. 
+            The site showcases business solutions, AI-driven services, and industry-specific tools through structured sections
+            and a modern UI. Featuring smooth navigation, interactive content blocks, and a clean layout, the platform focuses
+            on delivering a professional and user-friendly experience across all devices without relying on external frameworks.
+        </p>
+
+        <div class="d-flex gap-3">
+            <a href="https://dilshanvp2003-design.github.io/sap/" target="_blank" class="btn btn-mint-sm">
+                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+            </a>
+            <a href="https://github.com/dilshanvp2003-design/sap" target="_blank" class="btn btn-outline-dark-sm">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 4 -->
+<div class="col-md-6">
+    <div class="project-card p-4 h-100">
+
+        <!-- Project Image -->
+        <img src="images\shoe.jpeg" class="img-fluid rounded mb-3" alt="Shoe Website">
+
+                                                                   <h4 class="fw-bold mb-3" style="color: #040404;">
+Sneak X
+</h4>
+
+        <p class="text-secondary mb-4">
+            A modern e-commerce sneaker website built using HTML, CSS, and JavaScript,
+            designed to showcase premium footwear collections with a bold and stylish interface.
+            The platform features trending products, category-based browsing, discount banners, 
+            and promotional sections with a clean and responsive layout. With smooth navigation, 
+            interactive UI elements, and visually engaging design, the site delivers a seamless
+            and immersive shopping experience across all devices.
+        </p>
+      
+        <div class="d-flex gap-3">
+            <a href="https://dilshanvp2003-design.github.io/shoe-site/" target="_blank" class="btn btn-mint-sm">
+                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+            </a>
+            <a href="https://github.com/dilshanvp2003-design/shoe-site" target="_blank" class="btn btn-outline-dark-sm">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<section id="certificates" class="certificates-section py-5">
+    <section id="certificates" class="certificates-section"></section>
+    <div class="container">
+<div class="mb-5">
+    <h2 class="section-title">
+        <span class="text-brown">Certifi</span><span class="text-black-heading">cates</span>
+    </h2>
+    <div class="title-underline"></div>
+</div>
+
+        <div class="row g-4">
+
+            <!-- Certificate 1 -->
+            <div class="col-md-4">
+                <div class="certificate-card p-3 h-100">
+                    <img src="images\advanced .jpeg" class="img-fluid mb-2">
+                    <h6 style="color: #0b0807;">Advanced content-based Recommender System Essentials workshop</h6>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="col-md-4">
+                <div class="certificate-card p-3 h-100">
+                    <img src="images\bootstrap.jpeg" class="img-fluid mb-2">
+                    
+                    <h6 style="color: #050201;">Bootstrap Bootcamp</h6>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="col-md-4">
+                <div class="certificate-card p-3 h-100">
+                    <img src="images\cloud cli.jpeg" class="img-fluid mb-2">
+
+                    <h6 style="color: #080504;">Cloud CLI Essentials</h6>
+                   
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="col-md-4">
+                <div class="certificate-card p-3 h-100">
+                    <img src="images\java bootcamp.jpeg" class="img-fluid mb-2">
+
+                     <h6 style="color: #110c0a;">Java Bootcamp</h6>
+                    
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="col-md-4">
+                <div class="certificate-card p-3 h-100">
+                    <img src="images\placement.jpeg" class="img-fluid mb-2">
+                    
+                     <h6 style="color: #070504;">Placement Prep Bootcamp</h6>
+
+                    
+                </div>
+            </div>
+
+            <!-- Certificate 6 (PDF) -->
+          <div class="col-md-4">
+    <div class="certificate-card p-3 h-100">
+        
+        <!-- Image -->
+        <img src="images/python atm2.jpeg" class="img-fluid mb-2" alt="Certificate">
+
+     
+        <h6 style="color: #140f0e;">Python Atm simulation</h6>
+    </div>
+</div>
+
+        </div>
+    </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="section">
-<div class="container">
-<div class="section-title"><h2>Projects</h2></div>
-<div class="row g-4">
-<div class="col-md-6"><div class="card p-3">Ecommerce</div></div>
-<div class="col-md-6"><div class="card p-3">Task App</div></div>
+
+
+<section id="contact" class="contact-section py-5">
+    <section id="contact" class="contact-section"></section>
+ <div class="mb-5">
+    <h2 class="section-title">
+        <span class="text-brown">Lets</span> 
+        <span class="text-black-heading">Connect</span>
+    </h2>
+    <div class="title-underline"></div>
 </div>
-</div>
+
+
+
+
+
+
+<section id="contact" class="contact-section py-5">
+    <div class="container">
+
+        <div class="row g-4 align-items-stretch">
+
+            <!-- LEFT SIDE (FORM) -->
+            <div class="col-lg-7">
+                <div class="contact-card p-4 h-100">
+                    
+                    <form action="https://formsubmit.co/dilshanvp2003@gmail.com" method="POST">
+
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control custom-input" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control custom-input" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control custom-input" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+
+                        <input type="hidden" name="_subject" value="New Portfolio Message">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <button type="submit" class="btn btn-mint-lg w-100">
+                            <i class="fas fa-paper-plane me-2"></i> Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE (CONTACT INFO) -->
+            <div class="col-lg-5">
+                <div class="d-flex flex-column gap-4 h-100">
+
+                    <div class="info-card p-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="info-icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-secondary small mb-0">Email</p>
+                                <h6 class="fw-bold mb-0" style="color: #040404;">dilshanvp2003@gmail.com</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-secondary small mb-0" >Phone</p>
+                               <h6 class="fw-bold mb-0" style="color: #040404;">+91 9567695996</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section">
-<div class="container">
-<div class="section-title"><h2>Contact</h2></div>
-<div class="card p-4">
-<input class="form-control mb-2" placeholder="Name">
-<input class="form-control mb-2" placeholder="Email">
-<textarea class="form-control mb-2" placeholder="Message"></textarea>
-<button class="btn btn-success w-100">Send</button>
-</div>
-</div>
-</section>
 
-<script>
-new Typed('#typed-text', {
-strings:['Full Stack Developer','UI/UX Designer','Freelancer'],
-typeSpeed:50,
-backSpeed:30,
-loop:true
-});
-</script>
 
+<footer class="footer-section py-4 mt-5">
+    <div class="container border-top border-secondary pt-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="text-secondary mb-3 mb-md-0">© 2026 Dilshan . All rights reserved.</p>
+           <div class="social-links d-flex gap-4">
+    
+    <a href="https://www.linkedin.com/in/dilshan-vp/" target="_blank" class="text-secondary fs-5">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://github.com/dilshanvp2003-" target="_blank" class="text-secondary fs-5">
+        <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.instagram.com/dilshan_vp" target="_blank" class="text-secondary fs-5">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="mailto:dilshanvp2003@gmail.com" class="text-secondary fs-5">
+        <i class="far fa-envelope"></i>
+    </a>
+
+</div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
