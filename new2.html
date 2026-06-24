@@ -572,7 +572,104 @@ body.dark-mode .nav-link.active {
     font-weight: 800;
 }
 
+/* ===== CERTIFICATE SECTION NEW STYLE ===== */
 
+.certificate-card{
+    text-align:center;
+    padding:40px 30px !important;
+    border-radius:30px !important;
+    min-height:420px;
+}
+
+.certificate-card img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:25px;
+    background:#f5e6d6;
+    padding:8px;
+}
+
+.certificate-card h6{
+    font-size:2rem;
+    font-family:"Playfair Display", serif;
+    font-weight:600;
+    color:#111 !important;
+    margin-bottom:15px;
+    line-height:1.2;
+}
+
+.certificate-date{
+    color:#d9892b;
+    font-size:1.1rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.certificate-desc{
+    color:#6c757d;
+    font-size:1rem;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.certificate-btn{
+    display:inline-block;
+    padding:14px 40px;
+    border:1px solid #adb5bd;
+    border-radius:50px;
+    text-decoration:none;
+    color:#6c757d;
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:700;
+    transition:0.3s ease;
+}
+
+.certificate-btn:hover{
+    background:#0a0a0a;
+    color:#fff;
+    border-color:#0a0a0a;
+}
+
+/* Dark Mode */
+body.dark-mode .certificate-card h6{
+    color:#fff !important;
+}
+
+body.dark-mode .certificate-desc{
+    color:rgba(255,255,255,0.75) !important;
+}
+
+body.dark-mode .certificate-btn{
+    border-color:rgba(255,255,255,0.2);
+    color:#fff;
+}
+
+.certificate-desc{
+    font-size:14px;
+    color:#666;
+    line-height:1.7;
+    margin:12px 0 20px;
+}
+
+.certificate-btn{
+    display:inline-block;
+    padding:8px 20px;
+    border:1px solid #a23513;
+    color:#a23513;
+    text-decoration:none;
+    border-radius:25px;
+    font-size:13px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.certificate-btn:hover{
+    background:#a23513;
+    color:#fff;
+}
 
 
 </style>
@@ -653,11 +750,12 @@ body.dark-mode .nav-link.active {
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
                     <a href="#projects" class="btn btn-mint px-4 py-3">View My Projects</a>
 
-                    <a href="/images/Dilshan vp Resume.pdf"
-                       target="_blank"
-                       class="btn btn-outline-light px-4 py-3">
-                        Download Resume
-                    </a>
+                                      <a href="images\Black and White ATS-Friendly Simple Clean Resume CV.pdf"
+   target="_blank"
+   class="btn btn-outline-light px-4 py-3">
+   Download Resume
+</a>
+        
                 </div>
 
             </div>
@@ -818,77 +916,158 @@ body.dark-mode .nav-link.active {
 
 
 
-
-<section class="services-section py-5">
-    <section id="services" class="services-section"></section>
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section py-5">
     <div class="container">
-       <div class="mb-5">
-    <h2 class="section-title">
-        <span class="text-brown">My</span> 
-        <span class="text-black-heading">Services</span>
-    </h2>
-    <div class="title-underline"></div>
-</div>
+
+        <!-- Section Title -->
+        <div class="mb-5">
+            <h2 class="section-title">
+                <span class="text-brown">My</span>
+                <span class="text-black-heading">Services</span>
+            </h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <!-- Services Grid -->
         <div class="row g-4">
+
+            <!-- Service 1 -->
             <div class="col-md-6">
                 <div class="service-card p-4 h-100">
                     <div class="service-icon mb-3">
                         <i class="fas fa-layer-group"></i>
                     </div>
-                   <h4 class="fw-bold mb-3" style="color: #040404;">
-    Full Stack Web Application
-</h4>
-                    <p class="text-secondary">Django, React, Responsive Layouts, PostgreSQL/MySQL — end-to-end solutions built for scale.</p>
+
+                    <h4 class="fw-bold mb-3">Full Stack Web Development</h4>
+
+                    <p class="text-secondary">
+                        Build complete web applications using Django, React, JavaScript,
+                        HTML, CSS, Bootstrap, and MongoDB.
+                    </p>
                 </div>
             </div>
 
+            <!-- Service 2 -->
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Flutter Mobile App Development</h4>
+
+                    <p class="text-secondary">
+                        Cross-platform mobile applications using Flutter and Dart.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
             <div class="col-md-6">
                 <div class="service-card p-4 h-100">
                     <div class="service-icon mb-3">
                         <i class="fas fa-server"></i>
                     </div>
-                    
 
-                   <h4 class="fw-bold mb-3" style="color: #040404;">
-    Backend & API Devolepment
-</h4>
+                    <h4 class="fw-bold mb-3">Backend Development & API Integration</h4>
 
-                    <p class="text-secondary">Python & Django, Data Validation & Security, Third-party Integrations with robust architecture.</p>
+                    <p class="text-secondary">
+                        Django, REST APIs, authentication, database management and integrations.
+                    </p>
                 </div>
             </div>
 
+            <!-- Service 4 -->
             <div class="col-md-6">
                 <div class="service-card p-4 h-100">
                     <div class="service-icon mb-3">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fas fa-database"></i>
                     </div>
 
-                                       <h4 class="fw-bold mb-3" style="color: #040404;">
-Frontend & UI Implementation
-</h4>
+                    <h4 class="fw-bold mb-3">Database Design & Management</h4>
 
-                    <p class="text-secondary">Responsive Design, Component-based UI, Performance-focused Markup for delightful experiences.</p>
+                    <p class="text-secondary">
+                        MongoDB, MySQL database design, optimization and maintenance.
+                    </p>
                 </div>
             </div>
 
+
+      <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fab fa-react"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">React.js Development</h4>
+
+                    <p class="text-secondary">
+                        Building fast, responsive and interactive user interfaces using React.js,
+                        reusable components, hooks and modern frontend technologies.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Service 5 -->
+        
+
+            <!-- Service 6 -->
             <div class="col-md-6">
                 <div class="service-card p-4 h-100">
                     <div class="service-icon mb-3">
-                        <i class="fas fa-sync-alt"></i>
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                  
 
-                                                           <h4 class="fw-bold mb-3" style="color: #040404;">
-Support & Iteration
-</h4>
-                    <p class="text-secondary">Code Reviews & Refactoring, Feature Enhancements, Documentation to keep your project healthy.</p>
+                    <h4 class="fw-bold mb-3">Desktop Application Development</h4>
+
+                    <p class="text-secondary">
+                        Python Tkinter and Java desktop software solutions.
+                    </p>
                 </div>
             </div>
+
+            
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Data Analysis & Power BI</h4>
+
+                    <p class="text-secondary">
+                        Excel, Power BI, Python and NumPy dashboards and reporting.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Service 8 -->
+            <div class="col-md-6">
+                <div class="service-card p-4 h-100">
+                    <div class="service-icon mb-3">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Advanced Excel Solutions</h4>
+
+                    <p class="text-secondary">
+                        Creating automated spreadsheets, dashboards, data analysis reports,
+                        PivotTables, advanced formulas and business reporting solutions.
+                    </p>
+                </div>
+            </div>
+
         </div>
+
     </div>
 </section>
 
-
+<!-- Font Awesome (Add inside <head> if not already added) -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
 <section id="projects" class="projects-section py-5">
@@ -904,6 +1083,105 @@ Support & Iteration
         <div class="row g-4">
 
         
+
+
+       <!-- Project 1 - Dost Site -->
+<div class="col-md-6">
+    <div class="project-card p-4 h-100">
+
+        <!-- Project Video -->
+        <video class="img-fluid rounded mb-3" controls autoplay muted loop>
+            <source src="images/dost%20video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+       <h4 class="fw-bold mb-3" style="color: #040404;">
+    Dost Chicken Management System
+</h4>
+
+<p class="text-secondary mb-4">
+    A full-stack Poultry Business Management System developed for a chicken
+    supply company using HTML, CSS, Bootstrap, Django, and PostgreSQL.
+    The application provides secure shop authentication, branch management,
+    invoice creation and editing, payment tracking, balance calculations,
+    and PDF invoice downloads. Features include responsive dashboards,
+    shop-wise invoice records, automated closing balance calculations,
+    and a modern UI/UX design.
+
+    As a web-based platform with secure login access, the system can be
+    managed remotely from anywhere in the world, enabling real-time monitoring
+    of branches, invoices, payments, and business operations. Deployed on
+    Render with PostgreSQL database integration, it offers a scalable,
+    reliable, and efficient solution for managing daily poultry supply
+    operations across multiple branches.
+</p>
+</p>
+
+        <div class="d-flex gap-3">
+ <a href="images/dost video.mp4" target="_blank" class="btn btn-mint-sm">
+    <i class="fas fa-play me-2"></i>Live Demo
+</a>
+
+            <a href="YOUR_GITHUB_LINK" target="_blank" class="btn btn-outline-dark-sm">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+        </div>
+
+    </div>
+</div>
+        
+
+
+
+
+
+
+<!-- Project 2 - Book Store Website -->
+<div class="col-md-6">
+    <div class="project-card p-4 h-100">
+
+        <!-- Project Video -->
+        <video class="img-fluid rounded mb-3" controls autoplay muted loop>
+            <source src="images/book.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h4 class="fw-bold mb-3" style="color: #040404;">
+            Online Book Store Website
+        </h4>
+
+        <p class="text-secondary mb-4">
+    A full-stack Library Management System developed using Django, Python,
+    HTML, CSS, Bootstrap, and SQLite/MySQL. The application provides secure
+    user registration and login, book management, image uploads, book viewing,
+    editing, and deletion functionalities through an intuitive dashboard.
+
+    The system enables librarians and administrators to efficiently organize
+    and manage book records, monitor library resources, and maintain accurate
+    information through a centralized platform.
+
+    As a web-based application with secure authentication, the system can be
+    accessed and managed remotely from anywhere in the world, allowing users
+    to view, add, update, and manage library resources in real time. The
+    platform offers a scalable, reliable, and user-friendly solution for
+    modern digital library operations.
+</p>
+        <div class="d-flex gap-3">
+            <a href="images/book.mp4" target="_blank" class="btn btn-mint-sm">
+                <i class="fas fa-play me-2"></i>Live Demo
+            </a>
+
+            <a href="YOUR_GITHUB_LINK" target="_blank" class="btn btn-outline-dark-sm">
+                <i class="fab fa-github me-2"></i>GitHub
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+
+
       <!-- Project 1 -->
 <div class="col-md-6">
     <div class="project-card p-4 h-100">
@@ -927,11 +1205,11 @@ Sinet education
 
         <div class="d-flex gap-3">
             <a href="https://dilshanvp2003-design.github.io/sinet-project/" target="_blank" class="btn btn-mint-sm">
-                <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                <i class="fas fa-external-link-alt me-2"  ></i>Live Demo
             </a>
-            <a href="#" class="btn btn-outline-dark-sm">
-                <i class="fab fa-github me-2"></i>GitHub
-            </a>
+           <a href="https://dilshanvp2003-design.github.io/sinet-project/" target="_blank" class="btn btn-outline-dark-sm">
+    <i class="fab fa-github me-2"></i>GitHub
+</a>
         </div>
     </div>
 </div>
@@ -941,7 +1219,7 @@ Sinet education
     <div class="project-card p-4 h-100">
 
         <!-- Project Image -->
-        <img src="images\decofur.jpeg" class="img-fluid rounded mb-3" alt="Decofur Project">
+        <img src="images\decofur new.png" class="img-fluid rounded mb-3" alt="Decofur Project">
 
        
                                                                    <h4 class="fw-bold mb-3" style="color: #040404;">
@@ -961,9 +1239,9 @@ Decofur
             <a href="https://dilshanvp2003-design.github.io/decofur-/" target="_blank" class="btn btn-mint-sm">
                 <i class="fas fa-external-link-alt me-2"></i>Live Demo
             </a>
-            <a href="#" class="btn btn-outline-dark-sm">
-                <i class="fab fa-github me-2"></i>GitHub
-            </a>
+           <a href="https://dilshanvp2003-design.github.io/decofur-/" target="_blank" class="btn btn-outline-dark-sm">
+    <i class="fab fa-github me-2"></i>GitHub
+</a>
         </div>
     </div>
 </div>
@@ -1028,6 +1306,9 @@ Sneak X
 </div>
 
 
+
+
+
 <section id="certificates" class="certificates-section py-5">
     <section id="certificates" class="certificates-section"></section>
     <div class="container">
@@ -1040,67 +1321,95 @@ Sneak X
 
         <div class="row g-4">
 
-            <!-- Certificate 1 -->
-            <div class="col-md-4">
-                <div class="certificate-card p-3 h-100">
-                    <img src="images\advanced .jpeg" class="img-fluid mb-2">
-                    <h6 style="color: #0b0807;">Advanced content-based Recommender System Essentials workshop</h6>
-                </div>
-            </div>
-
-            <!-- Certificate 2 -->
-            <div class="col-md-4">
-                <div class="certificate-card p-3 h-100">
-                    <img src="images\bootstrap.jpeg" class="img-fluid mb-2">
-                    
-                    <h6 style="color: #050201;">Bootstrap Bootcamp</h6>
-                </div>
-            </div>
-
-            <!-- Certificate 3 -->
-            <div class="col-md-4">
-                <div class="certificate-card p-3 h-100">
-                    <img src="images\cloud cli.jpeg" class="img-fluid mb-2">
-
-                    <h6 style="color: #080504;">Cloud CLI Essentials</h6>
-                   
-                </div>
-            </div>
-
-            <!-- Certificate 4 -->
-            <div class="col-md-4">
-                <div class="certificate-card p-3 h-100">
-                    <img src="images\java bootcamp.jpeg" class="img-fluid mb-2">
-
-                     <h6 style="color: #110c0a;">Java Bootcamp</h6>
-                    
-                </div>
-            </div>
-
-            <!-- Certificate 5 -->
-            <div class="col-md-4">
-                <div class="certificate-card p-3 h-100">
-                    <img src="images\placement.jpeg" class="img-fluid mb-2">
-                    
-                     <h6 style="color: #070504;">Placement Prep Bootcamp</h6>
-
-                    
-                </div>
-            </div>
-
-            <!-- Certificate 6 (PDF) -->
-          <div class="col-md-4">
+   <!-- Certificate 1 -->
+<div class="col-md-4">
     <div class="certificate-card p-3 h-100">
-        
-        <!-- Image -->
-        <img src="images/python atm2.jpeg" class="img-fluid mb-2" alt="Certificate">
-
-     
-        <h6 style="color: #140f0e;">Python Atm simulation</h6>
+        <img src="images/advanced .jpeg" class="img-fluid mb-3" alt="">
+        <h6>Advanced Content-Based Recommender System Essentials Workshop</h6>
+        <p class="certificate-desc">
+            Workshop focused on recommendation systems, machine learning concepts,
+            and content-based filtering techniques.
+        </p>
+        <a href="images/advanced .jpeg" target="_blank" class="certificate-btn">
+            View Certificate
+        </a>
     </div>
 </div>
 
-        </div>
+<!-- Certificate 2 -->
+<div class="col-md-4">
+    <div class="certificate-card p-3 h-100">
+        <img src="images/bootstrap.jpeg" class="img-fluid mb-3" alt="">
+        <h6>Bootstrap Bootcamp</h6>
+        <p class="certificate-desc">
+            Hands-on training in responsive web design and modern user interface
+            development using Bootstrap.
+        </p>
+        <a href="images/bootstrap.jpeg" target="_blank" class="certificate-btn">
+            View Certificate
+        </a>
+    </div>
+</div>
+
+<!-- Certificate 3 -->
+<div class="col-md-4">
+    <div class="certificate-card p-3 h-100">
+        <img src="images/cloud cli.jpeg" class="img-fluid mb-3" alt="">
+        <h6>Cloud CLI Essentials</h6>
+        <p class="certificate-desc">
+            Practical knowledge of cloud technologies, command-line tools,
+            and cloud resource management.
+        </p>
+        <a href="images/cloud cli.jpeg" target="_blank" class="certificate-btn">
+            View Certificate
+        </a>
+    </div>
+</div>
+
+<!-- Certificate 4 -->
+<div class="col-md-4">
+    <div class="certificate-card p-3 h-100">
+        <img src="images/java bootcamp.jpeg" class="img-fluid mb-3" alt="">
+        <h6>Java Bootcamp</h6>
+        <p class="certificate-desc">
+            Training in Java programming fundamentals, object-oriented concepts,
+            and software development practices.
+        </p>
+        <a href="images/java bootcamp.jpeg" target="_blank" class="certificate-btn">
+            View Certificate
+        </a>
+    </div>
+</div>
+
+<!-- Certificate 5 -->
+<div class="col-md-4">
+    <div class="certificate-card p-3 h-100">
+        <img src="images/placement.jpeg" class="img-fluid mb-3" alt="">
+        <h6>Placement Prep Bootcamp</h6>
+        <p class="certificate-desc">
+            Career preparation program covering aptitude, communication,
+            interview techniques, and professional skills.
+        </p>
+        <a href="images/placement.jpeg" target="_blank" class="certificate-btn">
+            View Certificate
+        </a>
+    </div>
+</div>
+
+<!-- Certificate 6 -->
+<div class="col-md-4">
+    <div class="certificate-card p-3 h-100">
+        <img src="images/python atm2.jpeg" class="img-fluid mb-3" alt="">
+        <h6>Python ATM Simulation</h6>
+        <p class="certificate-desc">
+            Python-based mini project implementing ATM functionalities using
+            programming logic and object-oriented principles.
+        </p>
+        <a href="images/python atm2.jpeg" target="_blank" class="certificate-btn">
+            View Certificate
+        </a>
+    </div>
+</div>
     </div>
 </section>
 
